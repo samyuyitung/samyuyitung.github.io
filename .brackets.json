@@ -1,0 +1,13 @@
+{
+  "path": {
+    "../styles/main.scss": {
+      "sass.enabled": true,
+      "sass.options": {
+        "outputDir": "../js/",
+        "imagePath": null,
+        "sourceComments": "map",
+        "outputStyle": "compressed"
+      }
+    }
+  }
+}

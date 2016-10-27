@@ -1,0 +1,114 @@
+<!DOCTYPE HTML>
+
+<head>
+    <link rel="shortcut icon" href="images/icon.ico">
+    <title>Sam Yuyitung</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/enquire.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.internalLink').click(function () {
+                if ($(window).width() <= 767) {
+                    $("#sidebar").removeClass("active");
+                    $("#hamburger").removeClass("active");
+                }
+                if ($($(this).attr("target")).hasClass("hidden")) {
+                    $(".slide").addClass("hidden");
+                    $($(this).attr("target")).removeClass("hidden");
+                    $(".navItem").css({
+                        "text-decoration": "none"
+                    });
+                    $(this).css({
+                        "text-decoration": "line-through"
+                    });
+                    return false;
+                }
+            });
+            $(window).resize(function () {
+                if ($(window).width() > 767) {
+                    $("#hamburger").removeClass("active");
+                    $("#sidebar").removeClass("active");
+                }
+            });
+            $("#hamburger").click(function () {
+                $("#sidebar").toggleClass("active");
+                $("#hamburger").toggleClass("active");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="bodyWrapper">
+        <div id="sidebar">
+            <div id="nav">
+                <ul>
+                    <li id="navList">
+                        <h2><a class="navItem internalLink" target="#home">home</a></h2>
+                    </li>
+                    <li id="navList">
+                        <h2><a class="navItem internalLink" target="#about">about</a></h2>
+                    </li>
+                    <li id="navList">
+                        <h2><a class="navItem internalLink" target="#work">projects</a></h2>
+                    </li>
+                    <li id="navList">
+                        <h2><a class="navItem internalLink" target="#resume">resume</a></h2>
+                    </li>
+                </ul>
+            </div>
+            <div id="footer">
+                <h2>Contact me</h2>
+                <h5>
+                    <a href="https://www.github.com/samyuyitung" target="_blank" title="check out my projects">github</a>
+                </h5>
+                <h5>
+                    <a  href="https://www.linkedin.com/in/samyuyitung" target="_blank" title="connect with me">linkedin</a>
+                </h5>
+                <h5>
+                    <a  href="mailto:samyuyitung@gmail.com" title="talk with me">email</a>
+                </h5>
+            </div>
+            <div id="copyright">
+                <h6>&copy; Sam Yuyitung 2016</h6>
+            </div>
+        </div>
+        <button>
+            <img id="hamburger" src="assets/images/linkedin-old.svg" width="100%">
+        </button>
+        <div class="slide" id="home">
+            <div class="textbox">
+                <h1>Hi, my name is Sam.<br>I am a univerity student who loves to write code learn more about <a target="#about" class="internalLink">me</a>, my <a target="#work" class="internalLink">work</a> or check out my <a target="#resume" class="internalLink">resume</a></h1>
+            </div>
+        </div>
+
+        <div class="slide hidden" id="about">
+            <div class="textbox">
+                <h1>I am a second year systems design engineering student at the University of Waterloo in Canada. When I am not at school, I love to write code, usually I tend to do Android or web projects. And if I'm not doing that, I love to travel, mountain bike, and play football.</h1>
+            </div>
+        </div>
+
+        <div class="slide hidden" id="work">
+            <div class="title">
+                <h1>I like to write code, here is some of the stuff I have done </h1>
+            </div>
+            <div class="contentWrapper">
+            
+            </div>
+        </div>
+
+        <div class="slide hidden" id="resume">
+            <div class="title">
+                <h1>tl;dr</h1>
+            </div>
+            <a href="assets/images/home.png" target="_blank">
+                <div class="button">
+                    <h3>view pdf</h3>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+</body>
