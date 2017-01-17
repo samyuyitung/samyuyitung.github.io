@@ -11,7 +11,6 @@ h6 {
 }
 
 h1 {
-    color: white;
     font-size: 32px;
 }
 
@@ -20,12 +19,11 @@ h2 {
 }
 
 h3 {
-    color: white;
+    font-size: 18px;
 }
 
 h5 {
     font-size: 18px;
-    color: black;
 }
 
 h6 {
@@ -47,14 +45,18 @@ a:hover {
     }
 }
 
-
 /* end fonts*/
+/* colours */
+.white {
+    color: white;
+}
+/* end colors */
 
-body {
+body,html {
+    position: relative;
     overflow-x: hidden;
     font-family: 'Raleway', sans-serif;
 }
-
 
 /* general */
 
@@ -62,7 +64,6 @@ body {
     height: 100vh;
     width: 100vw;
 }
-
 
 /* end general
 /* sidebar */
@@ -99,6 +100,7 @@ body {
 
 #navList {
     text-align: right;
+    list-style: none;
 }
 
 #navList:hover {
@@ -130,36 +132,42 @@ body {
 
 
 /* end sidebar */
-
-
 /* slide general */
 
 .slide {
     position: absolute;
     right: 0;
     top: 0;
-    opacity: 1;
-    width: 93%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    transition: 1s;
+    opacity: 0.95;
+    width: calc(100% - 150px);
+    display: inline-block;
+    transition: 0.5s;
+    transition-delay: 0.25s;
+
 }
 
-.hidden {
+#about.hidden,
+#work.hidden,
+#resume.hidden {
     right: -90%;
     opacity: 0;
+    visibility: hidden;
+    transition-delay: 0s;
 }
 
-.row {
-    left: 0;
+.centerWrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
+.contentWrapper{
+    width: 95%;
+    margin: auto;
+}
 /* end slide general */
-
-
 /* home */
 
 #home {
@@ -168,10 +176,12 @@ body {
     background-repeat: no-repeat;
     background-position: center;
 }
-
+#home.hidden{
+    filter: brightness(25%);
+}
 .textbox {
     width: 90%;
-    max-width: 500px;
+    max-width: 600px;
     transition: 1s;
 }
 
@@ -182,23 +192,23 @@ body {
 
 
 /* end home */
-
-
 /* about */
 
 #about {
     background-color: royalblue;
 }
 
+
+/* end about */
+/* work */
 #work {
     background-color: saddlebrown;
 }
-
-
+/* end work */
 /* resume */
 
 #resume {
-    background-color: darkgreen;
+    background-color: #eee;
 }
 
 .title {
@@ -210,19 +220,23 @@ body {
     text-align: center;
 }
 
-#resume a {
-    position: absolute;
-    bottom: 2vh;
-    align-self: flex-end;
-}
-
 .button {
+    text-decoration: none;
     border: solid white 2px;
     background-color: transparent;
     padding: 1vh 1vw;
     transition: 0.4s;
+    width: 100px;
+    margin: auto;
+    position: relative;
+    left: calc(50% - 50px);
+    text-align: center;
 }
+.button a{
+    text-align: center;
+    text-decoration: none;
 
+}
 .button:hover {
     background-color: rgba(220, 220, 220, 0.4);
 }
