@@ -8,66 +8,73 @@
     <script src="js/enquire.min.js"></script>
     <script>
         $(document).ready(function () {
-            resize();
-            $('.internalLink').click(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length && $(target).hasClass("hidden")) {
-                        $(".slide").addClass("hidden");
-                        $(target).removeClass("hidden");
-                        $(".navItem").css({
-                            "text-decoration": "none"
-                        });
-                    }
-                    if (!$(this).hasClass("navItem")) {
-                        var navItems = $(".navItem").toArray();
-                        for (i = 0; i < navItems.length; i++) {
-                            if ($(navItems[i]).attr('href') === $(this).attr('href')) {
-                                $(navItems[i]).delay(700).queue(function (next) {
-                                    $(this).css({
-                                        "text-decoration": "line-through"
-                                    });
-                                    next();
-                                });
-                                break;
+                    resize();
+                    $('.internalLink').click(function () {
+                            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                                var target = $(this.hash);
+                                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                                if (target.length && $(target).hasClass("hidden")) {
+                                    window.scrollTo(0, 0);
+                                    $(".slide").addClass("hidden"); $(target).removeClass("hidden");
+                                    $(".navItem").css({
+                                            "text-decoration": "none"
+                                        });
+                                    }
+                                    resize();
+                                    if (!$(this).hasClass("navItem")) {
+                                        var navItems = $(".navItem").toArray();
+                                        for (i = 0; i < navItems.length; i++) {
+                                            if ($(navItems[i]).attr('href') === $(this).attr('href')) {
+                                                $(navItems[i]).delay(700).queue(function (next) {
+                                                    $(this).css({
+                                                        "text-decoration": "line-through"
+                                                    });
+                                                    next();
+                                                });
+                                                break;
+                                            }
+                                        }
+                                    } else {
+                                        $(this).css({
+                                            "text-decoration": "line-through"
+                                        });
+                                    }
+
+                                }
+                                if ($(window).width() <= 767) {
+                                    $("#sidebar").removeClass("active");
+                                    $("#hamburger").removeClass("active");
+                                }
+                                return false;
+                            }); $(window).resize(function () {
+                            if ($(window).width() > 767) {
+                                $("#hamburger").removeClass("active");
+                                $("#sidebar").removeClass("active");
                             }
-                        }
-                    } else {
-                        $(this).css({
-                            "text-decoration": "line-through"
+                            resize();
                         });
-                    }
 
-                }
-                if ($(window).width() <= 767) {
-                    $("#sidebar").removeClass("active");
-                    $("#hamburger").removeClass("active");
-                }
-                return false;
-            });
-            $(window).resize(function () {
-                if ($(window).width() > 767) {
-                    $("#hamburger").removeClass("active");
-                    $("#sidebar").removeClass("active");
-                }
-                resize();
-            });
-            $("#hamburger").click(function () {
-                $("#sidebar").toggleClass("active");
-                $("#hamburger").toggleClass("active");
-            });
-        });
+                        $("#hamburger").click(function () {
+                            $('.bt-menu-trigger').toggleClass('active');
+                            $("#sidebar").toggleClass("active");
+                        }); $(".slide").click(function () {
+                            if ($("#sidebar").hasClass("active") && $("#hamburger").hasClass("active")) {
+                                $("#sidebar").removeClass("active");
+                                $("#hamburger").removeClass("active");
+                            }
+                        });
+                    });
 
-        function resize() {
-            var maxHeight = $(window).height(); /* Set the min to 100vh */
-            $(".slide").each(function () {
-                if ($(this).height() > maxHeight) {
-                    maxHeight = $(this).height();
+                function resize() {
+                    $(".slide").each(function () {
+                        if (!$(this).hasClass('hidden') && $(this).height() > $(window).height()) {
+                            $('#home').height($(this).height());
+                        } else {
+                            $('#home').height($(window).height());
+
+                        }
+                    });
                 }
-            });
-            $(".slide").height(maxHeight);
-        }
     </script>
 </head>
 
@@ -80,9 +87,6 @@
                         <h2><a class="navItem internalLink" href="#home">home</a></h2>
                     </li>
                     <li id="navList">
-                        <h2><a class="navItem internalLink" href="#about">about</a></h2>
-                    </li>
-                    <li id="navList">
                         <h2><a class="navItem internalLink" href="#work">projects</a></h2>
                     </li>
                     <li id="navList">
@@ -91,7 +95,7 @@
                 </ul>
             </div>
             <div id="footer">
-                <h2>Contact me</h2>
+                <h2>Contact</h2>
                 <h5>
                     <a href="https://www.github.com/samyuyitung" target="_blank" title="check out my projects">github</a>
                 </h5>
@@ -106,129 +110,104 @@
                 <h6>&copy; Sam Yuyitung 2016</h6>
             </div>
         </div>
-        <button>
-            <img id="hamburger" src="assets/images/linkedin-old.svg" width="100%">
-        </button>
+        <div id="hamburger" class="bt-menu-trigger">
+            <span></span>
+        </div>
         <div class="slide" id="home">
-            <div class="centerWrapper">
+            <div class="centerWrapper fullHeight">
                 <div class="textbox white">
-                    <h1>Hi, my name is Sam.<br>I am a univerity student who loves to write code learn more about <a href="#about" class="internalLink">me</a>, my <a href="#work" class="internalLink">work</a> or check out my <a href="#resume" class="internalLink">resume</a></h1>
+                    <h1>Hi, my name is Sam.<br> am a second year systems design engineering student at the University of Waterloo in Canada. <br><br> When I am not at school, I love to write code, in the past I have dabled in Android or web projects. Currently I am enjoying writing algorithms to solve games. <a href="#work" class="internalLink">(check it out) </a><br><br> If I'm not doing that, I love to hike, mountain bike, and play football. <br><br> I am currently looking for internships, check out my <a href="#resume" class="internalLink">resume</a> here.</h1>
                 </div>
             </div>
         </div>
-
-        <div id="about" class="slide hidden">
-            <div class="centerWrapper">
-                <div class="textbox white">
-                    <h1>I am a second year systems design engineering student at the University of Waterloo in Canada. When I am not at school, I love to write code, usually I tend to do Android or web projects. And if I'm not doing that, I love to hike, mountain bike, and play football.</h1>
-                </div>
-            </div>
-        </div>
-
         <div class="slide hidden" id="work">
             <div class="title">
                 <h1>I like to write code, here is some of the cool stuff I have done </h1>
-            </div>
-            <div class="contentWrapper">
-                <div class="project">
-                    <h2>One Kick Turtle</h2>
-                    <p>An Arduino controlled arcade game written in processing. Showcasing the viability of a DIY controller to control a game.</p>
-                </div>
-                <div class="project">
-                    <h2>TrakRecord</h2>
-                    <p>A fitness tracking app focused on analytics while harnessing the power of beacons. </p>
-                </div>
-                <div class="project">
-                    <h2>Bop-it</h2>
-                    <p>An Arduino controlled arcade game written in processing</p>
-                </div>
-                <div class="project">
-                    <h2>Ask the 6god</h2>
-                    <p>An Arduino controlled arcade game written in processing</p>
-                </div>
-                <div class="project">
-                    <h2>Ask the 6god</h2>
-                    <p>An Arduino controlled arcade game written in processing</p>
-                </div>
+
+
+
             </div>
         </div>
 
         <div class="slide hidden" id="resume">
             <div class="title">
-                <h1>tl;dr</h1>
-                <p>This is the same as the resume.
-                    <br>Read this instead.</p>
+                <h1>me_irl</h1>
+                <p>This is the same as the downloadable.</p>
             </div>
-            <div class="contentWrapper">
-                <h2>What I Can Do</h2>
-                <p>Programming Stuff</p>
-                <ul>
-                    <li>
-                        <p><strong>Native:</strong> Java, C+, Android</p>
-                    </li>
-                    <li>
-                        <p><strong>Web:</strong> HTML / CSS, javascript, jQuery, Node.js, Ember.js, mongoDB</p>
-                    </li>
-                    <li>
-                        <p>
-                            <strong>Scripting:</strong> Python, bash, batch</p>
-                    </li>
-                    <li>
-                        <p><strong>Other:</strong> Git (flow) / SVN, can exit vim</p>
-                    </li>
-                </ul>
-                <h2>Work Experience</h2>
-                <ul>
-                    <li>
-                        <h3><strong>CIBC Live Labs</strong>:</h3>
-                        <p>Innovation Engineer (September - December 2016)
-                            <ul>
-                                <li>
-                                    <p>Co-developped informational website [<a href="http://cibc.live" target="_blank">cibc.live</a>] about our team with Ember.js</p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Designed and implemented RESTful api to support an Android application
-                                    </p>
-                                </li>
-                                <li>
-                                    <p>
-                                        Followed design practices such as agile, lean vailidation and code review
-                                    </p>
-                                </li>
-                            </ul>
-                        </p>
-                    </li>
-                    <li>
-                        <h3><strong>Cirba Inc</strong>:</h3>
-                        <p> Software Developer (January - April 2016)
-                            <ul>
-                                <li>
-                                    <p>Wrote a new installer for a product. Simplified build process for cross platform installers</p>
-                                </li>
-                                <li>
-                                    <p>Wrote an addon to the installer to backup all modified files before installing</p>
-                                </li>
-                                <li>
-                                    <p>Wrote shell script to simplify post install setup on linux.</p>
-                                </li>
-                            </ul>
-                        </p>
-                    </li>
-                </ul>
-                <h2>Projects</h2>
-                <a class="internalLink" href="#work">
-                    <p style="text-decoration: underline">See other section</p>
-                </a>
-                <h2>Education</h2>
-                <p>University of Waterloo
-                    <br>Systems Design Engineering
-                    <br>2015 - 2020</p>
-            </div>
-            <div class="button">
-                <a href="assets/images/home.png" target="_blank">
-                    <h3>view pdf</h3>
-                </a>
+            <div class="centerWrapper">
+                <div>
+                    <h2>Skills</h2>
+                    <ul class="no-bullet">
+                        <li>
+                            <p><strong>Native:</strong> Java, C++</p>
+                        </li>
+                        <li>
+                            <p><strong>Mobile:</strong> Android</p>
+                        </li>
+                        <li>
+                            <p><strong>Web:</strong> HTML / CSS, javascript, jQuery, Node.js, Express, mongoDB, Ember.js</p>
+                        </li>
+                        <li>
+                            <p>
+                                <strong>Scripting:</strong> Python, bash, batch</p>
+                        </li>
+                        <li>
+                            <p><strong>Other:</strong> Git (flow) &amp; Mercurial</p>
+                        </li>
+                    </ul>
+                    <h2>Work Experience</h2>
+                    <ul class="no-bullet">
+                        <li>
+                            <h3><strong>CIBC Live Labs</strong>:</h3>
+                            <p>Innovation Engineer (September - December 2016)
+                                <ul class="dash">
+                                    <li>
+                                        <p>Co-developped informational website [<a href="http://cibc.live" target="_blank">cibc.live</a>] about our team with Ember.js</p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Designed and implemented RESTful API to support an Android application using Java, Spring and PostgreSQL
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p>
+                                            Followed design practices such as agile, lean vailidation and code review
+                                        </p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                        <li>
+                            <h3><strong>Cirba Inc</strong>:</h3>
+                            <p> Software Developer (January - April 2016)
+                                <ul class="dash">
+                                    <li>
+                                        <p>Wrote a new installer for a product. Simplified build process for cross platform installers</p>
+                                    </li>
+                                    <li>
+                                        <p>Wrote an addon to the installer to backup all modified files before installing</p>
+                                    </li>
+                                    <li>
+                                        <p>Wrote shell script to simplify post install setup on linux.</p>
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ul>
+                    <h2>Projects</h2>
+                    <a class="internalLink" href="#work">
+                        <p style="text-decoration: underline">See other section</p>
+                    </a>
+                    <h2>Education</h2>
+                    <p>University of Waterloo
+                        <br>Systems Design Engineering
+                        <br>2015 - 2020</p>
+                    <div class="button">
+                        <a href="assets/images/home.png" download>
+                            <h3>download</h3>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -1,5 +1,6 @@
 @import "normalize.css";
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import "misc.css";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* fonts */
 
@@ -45,25 +46,38 @@ a:hover {
     }
 }
 
+
 /* end fonts*/
+
+
 /* colours */
+
 .white {
-    color: white;
+    color: #eee;
 }
+
+
 /* end colors */
 
-body,html {
+body,
+html {
     position: relative;
     overflow-x: hidden;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
 
 /* general */
 
 #bodyWrapper {
-    height: 100vh;
     width: 100vw;
+    min-height: 100vh;
 }
+
 
 /* end general
 /* sidebar */
@@ -88,7 +102,7 @@ body,html {
     top: 2vh;
     left: 2vw;
     display: none;
-    width: 50px;
+    width: 30px;
     z-index: 10;
     transition: 0.5s;
 }
@@ -103,8 +117,9 @@ body,html {
     list-style: none;
 }
 
-#navList:hover {
+#navList a:hover {
     cursor: pointer;
+    text-decoration: line-through;
     opacity: 0.8;
 }
 
@@ -132,57 +147,86 @@ body,html {
 
 
 /* end sidebar */
+
+
 /* slide general */
 
 .slide {
     position: absolute;
+    display: inline-block;
     right: 0;
     top: 0;
-    opacity: 0.95;
     width: calc(100% - 150px);
-    display: inline-block;
+    min-height: 100vh;
+    opacity: 0.95;
+
+    -webkit-transition: 0.5s;
     transition: 0.5s;
+    -webkit-transition-delay: 0.25s;
     transition-delay: 0.25s;
 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
 }
 
-#about.hidden,
 #work.hidden,
 #resume.hidden {
     right: -90%;
     opacity: 0;
     visibility: hidden;
+    -webkit-transition-delay: 0s;
     transition-delay: 0s;
+    height: 0;
+    overflow: hidden;
 }
 
-.centerWrapper{
-    width: 100%;
-    height: 100%;
+.fullHeight {
+    height: 100vh;
+}
+
+.centerWrapper {
+    margin: 0 auto;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.contentWrapper{
-    width: 95%;
-    margin: auto;
+ul.dash {
+    list-style-type: none;
 }
+
+ul.dash > li:before {
+    content: "–";
+    /* en dash */
+    position: absolute;
+    margin-left: -1.1em;
+}
+
+.no-bullet {
+    list-style: none;
+}
+
+
 /* end slide general */
+
+
 /* home */
 
 #home {
-    background-image: url('/assets/images/home.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: url('/assets/images/main.png');
 }
-#home.hidden{
+
+#home.hidden {
     filter: brightness(25%);
 }
+
 .textbox {
     width: 90%;
     max-width: 600px;
-    transition: 1s;
+    padding: 25px;
 }
 
 .textbox a {
@@ -192,23 +236,22 @@ body,html {
 
 
 /* end home */
-/* about */
-
-#about {
-    background-color: royalblue;
-}
 
 
-/* end about */
 /* work */
+
 #work {
     background-color: saddlebrown;
 }
+
+
 /* end work */
+
+
 /* resume */
 
 #resume {
-    background-color: #eee;
+    background-color: #ddd;
 }
 
 .title {
@@ -222,23 +265,25 @@ body,html {
 
 .button {
     text-decoration: none;
-    border: solid white 2px;
+    border: solid black 2px;
     background-color: transparent;
-    padding: 1vh 1vw;
-    transition: 0.4s;
-    width: 100px;
-    margin: auto;
+    width: 120px;
     position: relative;
     left: calc(50% - 50px);
+    padding: 1vh 1vw;
+    margin-bottom: 2vh;
     text-align: center;
 }
-.button a{
+
+.button a {
     text-align: center;
     text-decoration: none;
-
 }
+
 .button:hover {
-    background-color: rgba(220, 220, 220, 0.4);
+    background-color: rgba(3, 3, 3, 0.4);
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
 }
 
 
@@ -255,9 +300,10 @@ body,html {
         display: block;
     }
     #hamburger.active {
-        left: 80px;
+        left: 100px;
     }
     .slide {
         width: 100%;
+        background-position: center;
     }
 }
