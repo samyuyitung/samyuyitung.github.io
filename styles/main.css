@@ -56,6 +56,9 @@ a:hover {
     color: #eee;
 }
 
+.text-left {
+    text-align: center;
+}
 
 /* end colors */
 
@@ -64,6 +67,7 @@ html {
     position: relative;
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
+
 }
 
 ::-webkit-scrollbar {
@@ -98,11 +102,12 @@ html {
 }
 
 #hamburger {
-    position: absolute;
+    position: fixed;
     top: 2vh;
     left: 2vw;
     display: none;
-    width: 30px;
+    opacity: 0;
+    width: 20px;
     z-index: 10;
     transition: 0.5s;
 }
@@ -119,7 +124,8 @@ html {
 
 #navList a:hover {
     cursor: pointer;
-    text-decoration: line-through;
+    color: skyblue;
+    text-decoration: none;
     opacity: 0.8;
 }
 
@@ -168,7 +174,6 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
-    background-attachment: fixed;
 }
 
 #work.hidden,
@@ -183,10 +188,12 @@ html {
 }
 
 .fullHeight {
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .centerWrapper {
+    border-left: transparent solid 30px;
+    border-right: transparent solid 30px;
     margin: 0 auto;
     width: 90%;
     display: flex;
@@ -216,7 +223,7 @@ ul.dash > li:before {
 /* home */
 
 #home {
-    background-image: url('/assets/images/main.png');
+    background-image: url('/assets/images/test.png');
 }
 
 #home.hidden {
@@ -231,7 +238,7 @@ ul.dash > li:before {
 
 .textbox a {
     cursor: pointer;
-    color: firebrick;
+    color: skyblue;
 }
 
 
@@ -241,17 +248,31 @@ ul.dash > li:before {
 /* work */
 
 #work {
-    background-color: saddlebrown;
+    background-color: skyblue;
 }
 
+#project-flow {
+    width: 80%;
+    margin: auto;
 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 2vh;
+}
+.project {
+    margin: 2vh;
+    max-width: 250px;
+    text-align: center;
+}
 /* end work */
 
 
 /* resume */
 
 #resume {
-    background-color: #ddd;
+    background-color: #fff;
 }
 
 .title {
@@ -269,10 +290,10 @@ ul.dash > li:before {
     background-color: transparent;
     width: 120px;
     position: relative;
-    left: calc(50% - 50px);
+    left: calc(50% - 60px);
     padding: 1vh 1vw;
-    margin-bottom: 2vh;
     text-align: center;
+    margin-bottom: 2vh;
 }
 
 .button a {
@@ -298,12 +319,12 @@ ul.dash > li:before {
     }
     #hamburger {
         display: block;
+        opacity: 1;
     }
     #hamburger.active {
-        left: 100px;
+        left: 120px;
     }
     .slide {
         width: 100%;
-        background-position: center;
     }
 }

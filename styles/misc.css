@@ -1,6 +1,5 @@
-
 .bt-menu-trigger {
-    font-size: 20px;
+    font-size: 14px;
     position: relative;
     display: inline-block;
     width: 2em;
@@ -48,6 +47,11 @@
     -webkit-transform: translateY(0.5em);
     transform: translateY(0.5em);
 }
+/*
+.bt-menu-trigger.active span {
+    -webkit-transform: translateX(-1.1em) scaleX(1.1);
+    transform: translateX(-1.1em) scaleX(1.1);
+}*/
 
 .bt-menu-trigger.active span:before {
     -webkit-transform: translateY(-0.3em) translateX(-0.5em) rotate(-45deg) scaleX(0.6);
