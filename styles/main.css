@@ -272,6 +272,7 @@ ul.dash > li:before {
 
 .project img {
     width: 50%;
+    height: auto;
     margin-bottom: 40px;
 }
 
