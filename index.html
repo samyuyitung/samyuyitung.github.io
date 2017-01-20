@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 
 <head>
-    <link rel="shortcut icon" href="images/icon.ico">
+    <link rel="shortcut icon" href="assets/images/icon.ico">
     <title>Sam Yuyitung</title>
     <link rel="stylesheet" href="styles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
@@ -11,7 +11,10 @@
     <script src="js/main.js"></script>
     <script src="js/iscroll.js"></script>
     <script src="js/vex.js"></script>
-<script>vex.defaultOptions.className = 'vex-theme-os'</script>
+    <script src="js/content.js"></script>
+    <script>
+        vex.defaultOptions.className = 'vex-theme-default'
+    </script>
 
 </head>
 
@@ -59,47 +62,50 @@
         </div>
         <div class="slide hidden" id="work">
             <div class="title">
-                <h1>I like to write code, here is some of the cool stuff I have done </h1>
+                <h1>I like to write code. <br>Here is some of the cool stuff I have done </h1>
             </div>
             <div id="project-flow">
                 <div class="project">
-                    <img src="assets/images/myorganizer.svg">
-                    <div>
+                    <img src="assets/images/onekick.svg">
+                    <div class="project-desc">
                         <h1> One kick turtle </h1>
                         <p class="text-left">A simple arcade game externally controlled by a arduino powered controller.</p>
-                        <a class="more-link">read more</a>
+                        <a class="more-link" target="onekickturtle">read more</a>
                     </div>
                 </div>
                 <div class="project">
-                    <img src="assets/images/myorganizer.svg">
-                    <div>
+                    <img src="assets/images/bopit.svg">
+                    <div class="project-desc">
                         <h1> Bop-it </h1>
                         <p class="text-left">A classic reaction game recreated with an arduino.</p>
-                        <a class="more-link" target="bop-it">read more</a>
                     </div>
+                    <a class="more-link" target="bop-it">read more</a>
+
                 </div>
                 <div class="project">
                     <img src="assets/images/foosball.svg">
-                    <div>
+                    <div class="project-desc">
                         <h1> Foosbot </h1>
                         <p class="text-left">A slack bot to challenge other, track record and view stats relating to foosbal.</p>
-                        <a class="more-link">read more</a>
+                        <a class="more-link" target="foosbot">read more</a>
                     </div>
                 </div>
                 <div class="project">
                     <img src="assets/images/trakrecord.svg">
-                    <div>
+                    <div class="project-desc">
                         <h1> TrakRecord </h1>
-                        <p class="text-left">A marathon assistant Android application powered by Estimote beacons.</p> <a class="more-link">read more</a>
+                        <p class="text-left">A marathon assistant Android application powered by Estimote beacons.</p>
+                        <a class="more-link" target="trakrecord">read more</a>
                     </div>
                 </div>
                 <div class="project">
-                    <img src="assets/images/drake.png">
-                    <div>
+                    <img src="assets/images/drake.svg">
+                    <div class="project-desc">
                         <h1> Ask 6God </h1>
                         <p class="text-left">A Drake themed virtual tarot Android app powered with machine learning.</p>
-                        <a class="more-link">read more</a>
                     </div>
+                    <a class="more-link" target="ask6god">read more</a>
+
                 </div>
             </div>
         </div>

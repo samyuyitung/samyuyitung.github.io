@@ -63,6 +63,7 @@ a:hover {
     text-align: center;
 }
 
+
 /* end colors */
 
 body,
@@ -70,7 +71,6 @@ html {
     position: relative;
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
-
 }
 
 ::-webkit-scrollbar {
@@ -84,6 +84,7 @@ html {
     width: 100vw;
     min-height: 100vh;
 }
+
 
 /* end general
 /* sidebar */
@@ -167,12 +168,10 @@ html {
     width: calc(100% - 150px);
     min-height: 100vh;
     opacity: 0.95;
-
     -webkit-transition: 0.5s;
     transition: 0.5s;
     -webkit-transition-delay: 0.25s;
     transition-delay: 0.25s;
-
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right bottom;
@@ -256,23 +255,31 @@ ul.dash > li:before {
 #project-flow {
     width: 80%;
     margin: auto;
-
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-
     padding: 2vh;
 }
+
 .project {
     margin: 2vh;
     max-width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-.more-link{
-    position: relative;
-    bottom: 0;
+.project img {
+    width: 50%;
+    margin-bottom: 40px;
 }
+
+.more-link {
+    margin-top: auto;
+}
+
+
 /* end work */
 
 

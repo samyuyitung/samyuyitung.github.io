@@ -68,12 +68,7 @@ $(document).ready(function () {
     });
 
     $(".more-link").click(function () {
-        var content = "";
-        switch ($(this).attr('target')) {
-        case "bop-it":
-            content = "<p>Test your reaction time head to head! Powered by a single arduino, a bunch of buttons and a lot of wires. </p>";
-            break;
-        }
+        var content = getProjectBio($(this).attr('target'));
         vex.dialog.alert({
             unsafeMessage: content
         });
@@ -83,7 +78,21 @@ $(document).ready(function () {
 
 });
 
-function resize() {
+function resize(){
+    resizeProjects();
+    resizeHome();
+}
+function resizeProjects(){
+    var max = 0;
+    $(".project").each(function () {
+        if($(this).height() > max)
+            max = $(this).height();
+    });
+    $(".project").height(max);
+}
+
+
+function resizeHome() {
     $('#home').css({
         'height': '',
         'overflow-y': 'visible'
