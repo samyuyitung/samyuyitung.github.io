@@ -201,18 +201,6 @@ html {
     align-items: center;
     justify-content: center;
 }
-
-ul.dash {
-    list-style-type: none;
-}
-
-ul.dash > li:before {
-    content: "–";
-    /* en dash */
-    position: absolute;
-    margin-left: -1.1em;
-}
-
 .no-bullet {
     list-style: none;
 }

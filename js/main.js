@@ -72,20 +72,18 @@ $(document).ready(function () {
         vex.dialog.alert({
             unsafeMessage: content
         });
-
     });
-
-
 });
 
-function resize(){
+function resize() {
     resizeProjects();
     resizeHome();
 }
-function resizeProjects(){
+
+function resizeProjects() {
     var max = 0;
     $(".project").each(function () {
-        if($(this).height() > max)
+        if ($(this).height() > max)
             max = $(this).height();
     });
     $(".project").height(max);
