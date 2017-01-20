@@ -1,5 +1,7 @@
 @import "normalize.css";
 @import "misc.css";
+@import "vex.css";
+@import "vex-theme.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 /* fonts */
@@ -38,6 +40,7 @@ a {
 
 a:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 @media(max-width: 767px) {
@@ -81,7 +84,6 @@ html {
     width: 100vw;
     min-height: 100vh;
 }
-
 
 /* end general
 /* sidebar */
@@ -195,7 +197,7 @@ html {
     border-left: transparent solid 30px;
     border-right: transparent solid 30px;
     margin: 0 auto;
-    width: 90%;
+    width: 88%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -266,6 +268,11 @@ ul.dash > li:before {
     max-width: 250px;
     text-align: center;
 }
+
+.more-link{
+    position: relative;
+    bottom: 0;
+}
 /* end work */
 
 
@@ -326,5 +333,6 @@ ul.dash > li:before {
     }
     .slide {
         width: 100%;
+        background-position: center;
     }
 }

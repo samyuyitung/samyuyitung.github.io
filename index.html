@@ -5,93 +5,14 @@
     <title>Sam Yuyitung</title>
     <link rel="stylesheet" href="styles/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1">
+    <meta name="theme-color" content="#7ec0ee">
+
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/iscroll.js"></script>
-    <script>
-        $(document).ready(function () {
-            var myScroll = new IScroll('#bodyWrapper');
-            resize();
-            $('.internalLink').click(function () {
-                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
-                    var target = $(this.hash);
-                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                    if (target.length && $(target).hasClass("hidden")) {
-                        myScroll.scrollToElement('#bodyWrapper');
-                        $(".slide").addClass("hidden");
-                        $(target).removeClass("hidden");
-                        $(".navItem").css({
-                            "text-decoration": "none"
-                        });
-                    }
-                    resize();
-                    if (!$(this).hasClass("navItem")) {
-                        var navItems = $(".navItem").toArray();
-                        for (i = 0; i < navItems.length; i++) {
-                            if ($(navItems[i]).attr('href') === $(this).attr('href')) {
-                                $(navItems[i]).delay(700).queue(function (next) {
-                                    $(this).css({
-                                        "text-decoration": "underline"
-                                    });
-                                    next();
-                                });
-                                break;
-                            }
-                        }
-                    } else {
-                        $(this).css({
-                            "text-decoration": "underline"
-                        });
-                    }
+    <script src="js/vex.js"></script>
+<script>vex.defaultOptions.className = 'vex-theme-os'</script>
 
-                }
-                if ($(window).width() <= 767) {
-                    $("#sidebar").removeClass("active");
-                    $("#hamburger").removeClass("active");
-                }
-                return false;
-            });
-            $(window).resize(function () {
-                if ($(window).width() > 767) {
-                    $("#hamburger").removeClass("active");
-                    $("#sidebar").removeClass("active");
-                }
-                resize();
-            });
-
-            $("#hamburger").click(function () {
-                $('.bt-menu-trigger').toggleClass('active');
-                $("#sidebar").toggleClass("active");
-            });
-            $(".slide").click(function () {
-                if ($("#sidebar").hasClass("active") && $("#hamburger").hasClass("active")) {
-                    $("#sidebar").removeClass("active");
-                    $("#hamburger").removeClass("active");
-                }
-            });
-        });
-
-        function resize() {
-            $('#home').css({
-                'height': '',
-                'overflow-y': 'visible'
-            });
-            $(".slide").each(function () {
-
-                if (!$(this).hasClass('hidden')) {
-                    if ($(this).height() > $(window).height()) {
-                        $('#home').css({
-                            'height': '' + $(this).height()
-                        });
-                    } else {
-                        $('#home').css({
-                            'height': '' + $(window).height(),
-                            'overflow-y': 'hidden'
-                        });
-                    }
-                }
-            });
-        }
-    </script>
 </head>
 
 <body>
@@ -146,97 +67,106 @@
                     <div>
                         <h1> One kick turtle </h1>
                         <p class="text-left">A simple arcade game externally controlled by a arduino powered controller.</p>
+                        <a class="more-link">read more</a>
                     </div>
                 </div>
                 <div class="project">
                     <img src="assets/images/myorganizer.svg">
+                    <div>
+                        <h1> Bop-it </h1>
+                        <p class="text-left">A classic reaction game recreated with an arduino.</p>
+                        <a class="more-link" target="bop-it">read more</a>
+                    </div>
+                </div>
+                <div class="project">
+                    <img src="assets/images/foosball.svg">
                     <div>
                         <h1> Foosbot </h1>
                         <p class="text-left">A slack bot to challenge other, track record and view stats relating to foosbal.</p>
+                        <a class="more-link">read more</a>
                     </div>
                 </div>
                 <div class="project">
-                    <img src="assets/images/myorganizer.svg">
+                    <img src="assets/images/trakrecord.svg">
                     <div>
                         <h1> TrakRecord </h1>
-                        <p class="text-left">A marathon assistant Android application powered by Estimote beacons.</p>
+                        <p class="text-left">A marathon assistant Android application powered by Estimote beacons.</p> <a class="more-link">read more</a>
                     </div>
                 </div>
                 <div class="project">
-                    <img src="assets/images/myorganizer.svg">
+                    <img src="assets/images/drake.png">
+                    <div>
+                        <h1> Ask 6God </h1>
+                        <p class="text-left">A Drake themed virtual tarot Android app powered with machine learning.</p>
+                        <a class="more-link">read more</a>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="assets/images/myorganizer.svg">
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="slide hidden" id="resume">
-            <div class="title">
-                <h1>me_irl</h1>
-            </div>
-            <div class="centerWrapper">
-                <div>
-                    <h2>Skills</h2>
-
-                    <p><strong>Native:</strong> Java, C++</p>
-                    <p><strong>Mobile:</strong> Android</p>
-                    <p><strong>Web:</strong> HTML / CSS, javascript, jQuery, Node.js, Express, mongoDB, Ember.js</p>
-                    <p><strong>Scripting:</strong> Python, bash, batch</p>
-                    <p><strong>Other:</strong> Git (flow) &amp; Mercurial</p>
-
-                    <h2>Work Experience</h2>
-                    <h3><strong>CIBC Live Labs</strong>:</h3>
-                    <p>Innovation Engineer (September - December 2016)
-                        <ul class="dash">
-                            <li>
-                                <p>Co-developped informational website [<a href="http://cibc.live" target="_blank">cibc.live</a>] about our team with Ember.js</p>
-                            </li>
-                            <li>
-                                <p>
-                                    Designed and implemented RESTful API to support an Android application using Java, Spring and PostgreSQL
-                                </p>
-                            </li>
-                            <li>
-                                <p>
-                                    Followed design practices such as agile, lean vailidation and code review
-                                </p>
-                            </li>
-                        </ul>
-                    </p>
-                    <h3><strong>Cirba Inc</strong>:</h3>
-                    <p> Software Developer (January - April 2016)
-                        <ul class="dash">
-                            <li>
-                                <p>Wrote a new installer for a product. Simplified build process for cross platform installers</p>
-                            </li>
-                            <li>
-                                <p>Wrote an addon to the installer to backup all modified files before installing</p>
-                            </li>
-                            <li>
-                                <p>Wrote shell script to simplify post install setup on linux.</p>
-                            </li>
-                        </ul>
-                    </p>
-                    <h2>Projects</h2>
-                    <a class="internalLink" href="#work">
-                        <p style="text-decoration: underline">See other section</p>
-                    </a>
-                    <h2>Education</h2>
-                    <p>University of Waterloo
-                        <br>Systems Design Engineering
-                        <br>2015 - 2020</p>
-                </div>
-            </div>
-            <div class="button">
-                <a href="assets/images/home.png" download>
-                    <h3>download</h3>
-                </a>
             </div>
         </div>
     </div>
 
+    <div class="slide hidden" id="resume">
+        <div class="title">
+            <h1>me_irl</h1>
+        </div>
+        <div class="centerWrapper">
+            <div>
+                <h2>Skills</h2>
 
+                <p><strong>Native:</strong> Java, C++</p>
+                <p><strong>Mobile:</strong> Android</p>
+                <p><strong>Web:</strong> HTML / CSS, javascript, jQuery, Node.js, Express, mongoDB, Ember.js</p>
+                <p><strong>Scripting:</strong> Python, bash, batch</p>
+                <p><strong>Other:</strong> Git (flow) &amp; Mercurial</p>
+
+                <h2>Work Experience</h2>
+                <h3><strong>CIBC Live Labs</strong>:</h3>
+                <p>Innovation Engineer (September - December 2016)
+                    <ul class="dash">
+                        <li>
+                            <p>Co-developped informational website [<a href="http://cibc.live" target="_blank">cibc.live</a>] about our team with Ember.js</p>
+                        </li>
+                        <li>
+                            <p>
+                                Designed and implemented RESTful API to support an Android application using Java, Spring and PostgreSQL
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                Followed design practices such as agile, lean vailidation and code review
+                            </p>
+                        </li>
+                    </ul>
+                </p>
+                <h3><strong>Cirba Inc</strong>:</h3>
+                <p> Software Developer (January - April 2016)
+                    <ul class="dash">
+                        <li>
+                            <p>Wrote a new installer for a product. Simplified build process for cross platform installers</p>
+                        </li>
+                        <li>
+                            <p>Wrote an addon to the installer to backup all modified files before installing</p>
+                        </li>
+                        <li>
+                            <p>Wrote shell script to simplify post install setup on linux.</p>
+                        </li>
+                    </ul>
+                </p>
+                <h2>Projects</h2>
+                <a class="internalLink" href="#work">
+                    <p style="text-decoration: underline">See other section</p>
+                </a>
+                <h2>Education</h2>
+                <p>University of Waterloo
+                    <br>Systems Design Engineering
+                    <br>2015 - 2020</p>
+            </div>
+        </div>
+        <div class="button">
+            <a href="assets/images/home.png" download>
+                <h3>download</h3>
+            </a>
+        </div>
+    </div>
+    </div>
 </body>
