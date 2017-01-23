@@ -81,6 +81,7 @@ function resize() {
 }
 
 function resizeProjects() {
+    $(".project-img").height($(".project-img").width());
     var max = 0;
     $(".project").each(function () {
         if ($(this).height() > max)
