@@ -201,6 +201,7 @@ html {
     align-items: center;
     justify-content: center;
 }
+
 .no-bullet {
     list-style: none;
 }
@@ -212,7 +213,8 @@ html {
 /* home */
 
 #home {
-    background-image: url('/assets/images/home.png');
+    background-color: #000;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/home.jpg');
 }
 
 #home.hidden {
