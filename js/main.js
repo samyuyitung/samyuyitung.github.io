@@ -1,13 +1,11 @@
 $(document).ready(function () {
     resize();
-    //var myScroll = new IScroll('#bodyWrapper');
 
     $('.internalLink').click(function () {
         if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length && $(target).hasClass("hidden")) {
-                //myScroll.scrollToElement('#bodyWrapper');
                 $(".slide").addClass("hidden");
                 $(target).removeClass("hidden");
                 $(".navItem").css({
@@ -72,6 +70,13 @@ $(document).ready(function () {
         vex.dialog.alert({
             unsafeMessage: content
         });
+    });
+
+    $(window).on("load", function () {
+        $("body").animate({
+            scrollTop: 0
+        });
+        $("#load-screen").fadeOut("fast");
     });
 });
 

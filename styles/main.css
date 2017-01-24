@@ -85,6 +85,22 @@ html {
     min-height: 100vh;
 }
 
+#load-screen {
+    background: #eee;
+    opacity: 1;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}
+
+#load-screen img {
+    position: fixed;
+    top: 47.5%;
+    width: 50px;
+    left: 47.5%;
+}
+
 
 /* end general
 /* sidebar */
