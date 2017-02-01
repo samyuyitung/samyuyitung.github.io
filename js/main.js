@@ -6,6 +6,7 @@ $(document).ready(function () {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length && $(target).hasClass("hidden")) {
+                $(target).scrollTop();
                 $(".slide").addClass("hidden");
                 $(target).removeClass("hidden");
                 $(".navItem").css({
