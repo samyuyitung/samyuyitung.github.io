@@ -230,7 +230,7 @@ html {
 
 #home {
     background-color: #000;
-    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/bg.png');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/bg.jpg');
 }
 
 #home.hidden {
