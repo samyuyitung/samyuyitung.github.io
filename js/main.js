@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    checkCookie()
     resize();
 
     $('.internalLink').click(function () {
@@ -6,34 +7,9 @@ $(document).ready(function () {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length && $(target).hasClass("hidden")) {
-                $(target).scrollTop();
-                $(".slide").addClass("hidden");
-                $(target).removeClass("hidden");
-                $(".navItem").css({
-                    "text-decoration": "none"
-                });
-                resize();
-
+                changePage(target);
+                adjustUnderline(this, !$(this).hasClass("navItem"));
             }
-            if (!$(this).hasClass("navItem")) {
-                var navItems = $(".navItem").toArray();
-                for (i = 0; i < navItems.length; i++) {
-                    if ($(navItems[i]).attr('href') === $(this).attr('href')) {
-                        $(navItems[i]).delay(700).queue(function (next) {
-                            $(this).css({
-                                "text-decoration": "underline"
-                            });
-                            next();
-                        });
-                        break;
-                    }
-                }
-            } else {
-                $(this).css({
-                    "text-decoration": "underline"
-                });
-            }
-
 
             if ($(window).width() <= 767) {
                 $("#sidebar").removeClass("active");
@@ -80,6 +56,47 @@ $(document).ready(function () {
         $("#load-screen").fadeOut("fast");
     });
 });
+
+function changePage(target) {
+    $(target).scrollTop();
+    $(".slide").addClass("hidden");
+    $(target).removeClass("hidden");
+    $(".navItem").css({
+        "text-decoration": "none"
+    });
+    resize();
+    Cookies.set('page', $(target).selector);
+
+}
+
+function adjustUnderline(link, nav){
+    if (nav) {
+        var navItems = $(".navItem").toArray();
+        for (i = 0; i < navItems.length; i++) {
+            if ($(navItems[i]).attr('href') === $(link).attr('href') || $(navItems[i]).attr('href') === link) {
+                $(navItems[i]).delay(700).queue(function (next) {
+                    $(navItems[i]).css({
+                        "text-decoration": "underline"
+                    });
+                    next();
+                });
+                break;
+            }
+        }
+    } else {
+        $(link).css({
+            "text-decoration": "underline"
+        });
+    }
+}
+
+function checkCookie() {
+    var page = Cookies.get('page');
+    if ($(page).hasClass('hidden')) {
+        changePage(page);
+        adjustUnderline(page, true)
+    }
+}
 
 function resize() {
     resizeProjects();
