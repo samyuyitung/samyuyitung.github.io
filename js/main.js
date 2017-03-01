@@ -65,7 +65,7 @@ function changePage(target) {
         "text-decoration": "none"
     });
     resize();
-    Cookies.set('page', $(target).selector);
+    Cookies.set('page', $(target).selector, { expires: 1/24 });
 
 }
 
