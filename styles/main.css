@@ -3,22 +3,10 @@
 @import "vex.css";
 @import "vex-theme.css";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-
-/* fonts */
-
-h1,
-h3,
-h4,
-h6 {
-    margin: 0;
-}
+	
 
 h1 {
     font-size: 32px;
-}
-
-h2 {
-    color: black;
 }
 
 h3 {
@@ -31,6 +19,7 @@ h5 {
 
 h6 {
     font-size: 12px;
+    margin: 0;
 }
 
 a {
@@ -40,7 +29,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-    cursor: pointer;
 }
 
 @media(max-width: 767px) {
@@ -48,22 +36,14 @@ a:hover {
         font-size: 24px;
     }
 }
-
-
 /* end fonts*/
-
-
 /* colours */
-
 .white {
     color: #eee;
 }
-
 .text-left {
     text-align: center;
 }
-
-
 /* end colors */
 
 body,
@@ -76,10 +56,7 @@ html {
 ::-webkit-scrollbar {
     display: none;
 }
-
-
 /* general */
-
 #bodyWrapper {
     width: 100vw;
     min-height: 100vh;
@@ -100,11 +77,8 @@ html {
     width: 50px;
     left: 47.5%;
 }
-
-
 /* end general
 /* sidebar */
-
 #sidebar {
     z-index: 10;
     position: fixed;
@@ -169,13 +143,8 @@ html {
     width: 100%;
     text-align: center;
 }
-
-
 /* end sidebar */
-
-
 /* slide general */
-
 .slide {
     position: absolute;
     display: inline-block;
@@ -217,17 +186,8 @@ html {
     align-items: center;
     justify-content: center;
 }
-
-.no-bullet {
-    list-style: none;
-}
-
-
 /* end slide general */
-
-
 /* home */
-
 #home {
     background-color: #000;
     background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/bg.jpg');
@@ -247,13 +207,8 @@ html {
     cursor: pointer;
     color: skyblue;
 }
-
-
 /* end home */
-
-
 /* work */
-
 #work {
     background-color: skyblue;
 }
@@ -284,13 +239,8 @@ html {
 .more-link {
     margin-top: auto;
 }
-
-
 /* end work */
-
-
 /* resume */
-
 #resume {
     background-color: #fff;
 }
@@ -305,15 +255,11 @@ html {
 }
 
 .button {
-    text-decoration: none;
-    border: solid black 2px;
-    background-color: transparent;
-    width: 120px;
     position: relative;
     left: calc(50% - 60px);
-    padding: 1vh 1vw;
-    text-align: center;
     margin-bottom: 2vh;
+    border: solid black 2px;
+    width: 120px;
 }
 
 .button a {
@@ -322,28 +268,30 @@ html {
 }
 
 .button:hover {
-    background-color: rgba(3, 3, 3, 0.4);
     -webkit-transition: 0.5s;
     transition: 0.5s;
+    background-color: rgba(3, 3, 3, 0.4);
 }
-
-
+/* end resume */
 /* Media Queries */
-
 @media(max-width: 767px) {
     #sidebar {
         left: -150px;
     }
+
     #sidebar.active {
         left: 0;
     }
+
     #hamburger {
         display: block;
         opacity: 1;
     }
+
     #hamburger.active {
         left: 120px;
     }
+
     .slide {
         width: 100%;
         background-position: center;
