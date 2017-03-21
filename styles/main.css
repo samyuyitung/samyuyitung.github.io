@@ -12,10 +12,6 @@ h3 {
     font-size: 18px;
 }
 
-h5 {
-    font-size: 18px;
-}
-
 h6 {
     font-size: 12px;
     margin: 0;
@@ -40,7 +36,7 @@ a:hover {
 .white {
     color: #eee;
 }
-.text-left {
+.text-center {
     text-align: center;
 }
 /* end colors */
@@ -56,36 +52,20 @@ html {
     display: none;
 }
 /* general */
-#bodyWrapper {
+#body-wrapper {
     width: 100vw;
     min-height: 100vh;
 }
 
-#load-screen {
-    background: #eee;
-    opacity: 1;
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-}
-
-#load-screen img {
-    position: fixed;
-    top: 47.5%;
-    width: 50px;
-    left: 47.5%;
-}
 /* end general
 /* sidebar */
 #sidebar {
     z-index: 10;
     position: fixed;
-    top: 0;
     left: 0;
     height: 100%;
     width: 150px;
-    background-color: white;
+    background-color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,14 +89,14 @@ html {
     right: 10px;
 }
 
-#navList {
+#nav-list {
     text-align: right;
     list-style: none;
 }
 
-#navList a:hover {
+#nav-list a:hover {
     cursor: pointer;
-    color: skyblue;
+    color: #87ceeb;
     text-decoration: none;
     opacity: 0.8;
 }
@@ -172,11 +152,11 @@ html {
     overflow: hidden;
 }
 
-.fullHeight {
-    min-height: 100vh;
+.full-height {
+    height: 100%;
 }
 
-.centerWrapper {
+.center-wrapper {
     border-left: transparent solid 30px;
     border-right: transparent solid 30px;
     margin: 0 auto;
@@ -204,12 +184,12 @@ html {
 
 .textbox a {
     cursor: pointer;
-    color: skyblue;
+    color: #87ceeb;
 }
 /* end home */
 /* work */
 #work {
-    background-color: skyblue;
+    background-color: #87ceeb;
 }
 
 #project-flow {
@@ -257,19 +237,19 @@ html {
     position: relative;
     left: calc(50% - 60px);
     margin-bottom: 2vh;
-    border: solid black 2px;
+    border: solid #000 2px;
     width: 120px;
-}
-
-.button a {
-    text-align: center;
-    text-decoration: none;
 }
 
 .button:hover {
     -webkit-transition: 0.5s;
     transition: 0.5s;
     background-color: rgba(3, 3, 3, 0.4);
+}
+
+.button a {
+    text-align: center;
+    text-decoration: none;
 }
 /* end resume */
 /* Media Queries */
