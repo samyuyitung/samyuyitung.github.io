@@ -1,5 +1,7 @@
 function getProjectBio(project) {
     switch (project) {
+    case "asciiquarium":
+        return "<p>Inspired by the perl script <a href='http://www.robobunny.com/projects/asciiquarium/html/' target='_blank'>asciiquarium</a>, a similar experience was created for your browser or mobile device via a responsive web app!<br> Built with React.js. <br><br><a href='http://samyuyitung.com/asciiquarium 'target='_blank'>check it out!</a><br><a href='http://github.com/samyuyitung/asciiquarium' target='_blank'>github</a></p>";
     case "onekickturtle":
         return "<p>Defeat them all! In this game play as a turtle who has to fend off all the enemies and survive as long as you can. This game also makes use of an arduino to create an external controller for the game.<br>Built with an Arduino and Processing, selected as 3rd place at THacks 2016<br><br><a href='http://github.com/samyuyitung/onekickturtle' target='_blank'>github</a></p>";
         break;
