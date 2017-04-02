@@ -92,7 +92,7 @@ html {
     width: 40px;
     height: 40px;
     z-index: 10;
-    background: rgba(135, 206, 235, 1);
+    background: rgba(135, 206, 235, 0.35);
     border-radius: 20px;
     transition-property: opacity, left;
     transition-duration: 0s, 0.5s;
