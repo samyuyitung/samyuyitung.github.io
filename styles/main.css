@@ -1,7 +1,5 @@
 @import "normalize.css";
 @import "misc.css";
-@import "vex.css";
-@import "vex-theme.css";
 h1 {
     font-size: 32px;
 }
@@ -20,8 +18,9 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+a:hover{
     text-decoration: underline;
+    cursor: pointer;
 }
 
 @media(max-width: 767px) {
@@ -110,7 +109,6 @@ html {
 }
 
 #nav-list a:hover {
-    cursor: pointer;
     color: #87ceeb;
     text-decoration: none;
     opacity: 0.8;
@@ -208,7 +206,6 @@ html {
 }
 
 .textbox a {
-    cursor: pointer;
     color: #87ceeb;
 }
 
@@ -247,8 +244,12 @@ html {
 
 .more-link {
     margin-top: auto;
+    text-decoration: underline;
 }
 
+.project-bio a{
+    text-decoration: underline;
+}
 
 /* end work */
 
