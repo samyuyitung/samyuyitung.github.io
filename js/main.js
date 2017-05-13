@@ -47,7 +47,7 @@ $(document).ready(function () {
     });
 });
 
-function deactivate(){
+function deactivate() {
     $("#sidebar").removeClass("active");
     $("#hamburger").removeClass("active");
 }
@@ -60,11 +60,12 @@ function changePage(target) {
         "text-decoration": "none"
     });
     resize();
-    Cookies.set('page', $(target).selector, { expires: 1/24 });
-
+    Cookies.set('page', $(target).selector, {
+        expires: 1 / 24
+    });
 }
 
-function adjustUnderline(link, nav){
+function adjustUnderline(link, nav) {
     if (nav) {
         var navItems = $(".navItem").toArray();
         for (i = 0; i < navItems.length; i++) {

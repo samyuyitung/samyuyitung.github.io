@@ -1,5 +1,19 @@
 @import "normalize.css";
 @import "misc.css";
+body,
+html {
+    position: relative;
+    overflow-x: hidden;
+    font-family: 'Open Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* fonts */
+
 h1 {
     font-size: 32px;
 }
@@ -18,26 +32,24 @@ a {
     text-decoration: none;
 }
 
-a:hover{
+a:hover {
     text-decoration: underline;
     cursor: pointer;
 }
 
 @media(max-width: 767px) {
     h1 {
-		font-size: 24px;
+        font-size: 24px;
     }
 }
 
 p {
-	line-height: 1.4;
+    line-height: 1.4;
 }
 
 
-/* end fonts*/
-
-
-/* colours */
+/* end fonts
+   colours */
 
 .white {
     color: #eee;
@@ -48,21 +60,8 @@ p {
 }
 
 
-/* end colors */
-
-body,
-html {
-    position: relative;
-    overflow-x: hidden;
-    font-family: 'Open Sans', sans-serif;
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* general */
+/* end colors
+   general */
 
 #body-wrapper {
     width: 100vw;
@@ -71,7 +70,7 @@ html {
 
 
 /* end general
-/* sidebar */
+   sidebar */
 
 #sidebar {
     z-index: 10;
@@ -141,10 +140,8 @@ html {
 }
 
 
-/* end sidebar */
-
-
-/* slide general */
+/* end sidebar
+   slide general */
 
 .slide {
     position: absolute;
@@ -189,10 +186,8 @@ html {
 }
 
 
-/* end slide general */
-
-
-/* home */
+/* end slide general
+   home */
 
 #home {
     background-color: #000;
@@ -214,10 +209,8 @@ html {
 }
 
 
-/* end home */
-
-
-/* work */
+/* end home
+   work */
 
 #work {
     background-color: #87ceeb;
@@ -251,14 +244,13 @@ html {
     text-decoration: underline;
 }
 
-.project-bio a{
+.project-bio a {
     text-decoration: underline;
 }
 
-/* end work */
 
-
-/* resume */
+/* end work
+   resume */
 
 #resume {
     background-color: #fff;
@@ -293,10 +285,8 @@ html {
 }
 
 
-/* end resume */
-
-
-/* Media Queries */
+/* end resume
+   Media Queries */
 
 @media(max-width: 767px) {
     #sidebar {
