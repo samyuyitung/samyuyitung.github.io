@@ -106,20 +106,23 @@ p {
     right: 10px;
 }
 
-#nav-list {
+.nav-list {
     text-align: right;
     list-style: none;
 }
 
-#nav-list a:hover {
-    color: #87ceeb;
+
+/* 87ceeb */
+
+.nav-list a:hover {
+    color: #7ec1dd;
     text-decoration: none;
     opacity: 0.8;
 }
 
 #footer {
     position: absolute;
-    bottom: 3vh;
+    bottom: 0.5vh;
     right: 10px;
     align-self: flex-end;
     min-width: 100px;
@@ -127,16 +130,8 @@ p {
     text-align: right;
 }
 
-#footer h5 {
-    margin: 1vh auto;
-}
-
-#copyright {
-    position: absolute;
-    bottom: 0.5vh;
-    align-self: flex-end;
-    width: 100%;
-    text-align: center;
+#footer h3 {
+    padding: 1vh auto;
 }
 
 
@@ -306,5 +301,11 @@ p {
     .slide {
         width: 100%;
         background-position: center;
+    }
+}
+
+@media(max-height: 500px) {
+    #sidebvar {
+        display: block;
     }
 }
