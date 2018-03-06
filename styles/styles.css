@@ -1,0 +1,50 @@
+body {
+  padding: 20px;
+  line-height: 1.4;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #0000ff;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+a:after {
+  color: #0000ff;
+}
+
+#content {
+  margin: 20px auto;
+  max-width: 400px;
+  border: 2px solid #000;
+  border-radius: 10px;
+
+  padding: 20px;
+  display: inline-block;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  text-align: left;
+}
+
+.bike{
+  display:block;
+  width:200px;
+  height:150px;
+  position: relative;
+  text-align:left;
+  margin:auto;
+}
+
+@media (max-width: 700px) {
+  p {
+    font-size: 16px;
+  }
+  #content {
+    max-width: 100%;
+    margin-top: 0px;
+  }
+}
