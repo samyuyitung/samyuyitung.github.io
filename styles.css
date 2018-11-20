@@ -1,0 +1,23 @@
+body {
+  background: rgba(179, 229, 252, 0.2);
+  font-family: 'Open Sans', sans-serif;
+  text-align: center;
+}
+a, a:after {
+  text-decoration: none;
+  color: #0000ff;
+}
+main {
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#links a {
+	margin: 0 5px;
+}
+img {
+	max-width: 250px;
+	width: 60%;
+	border-radius: 30%;
+}
