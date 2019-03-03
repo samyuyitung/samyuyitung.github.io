@@ -1,6 +1,7 @@
 body {
-  background: rgba(179, 229, 252, 0.2);
+  background: #fff;
   font-family: 'Open Sans', sans-serif;
+  color: #000;
   text-align: center;
 }
 a, a:after {
@@ -12,9 +13,6 @@ main {
   width: 80%;
   max-width: 400px;
   margin: 0 auto;
-}
-#links a {
-	margin: 0 5px;
 }
 img {
 	max-width: 250px;
