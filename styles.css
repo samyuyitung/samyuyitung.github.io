@@ -4,14 +4,14 @@ body {
   color: #000;
   text-align: center;
 }
+
 a, a:after {
   text-decoration: none;
   color: #0000ff;
 }
 main {
   padding: 20px;
-  width: 80%;
-  max-width: 400px;
+  max-width: 270px;
   margin: 0 auto;
 }
 img {
