@@ -4,15 +4,13 @@ body {
   color: #000;
   text-align: center;
 }
-
 a, a:after {
   text-decoration: none;
   color: #0000ff;
 }
 main {
-  padding: 20px;
   max-width: 270px;
-  margin: 0 auto;
+  margin: 20px auto;
 }
 img {
 	max-width: 250px;
